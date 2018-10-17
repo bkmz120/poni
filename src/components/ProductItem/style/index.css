@@ -1,8 +1,24 @@
+@custom-media --xs (width < 768px);
+@custom-media --sm (width < 1024px);
+@custom-media --md (width < 1280px);
+@custom-media --lg (width < 1920px);
+@custom-media --xl (width >= 1920px);
+
 .productItem {
   width: 200px;
   box-shadow: 0 0 11px 0 #dadada;
   padding: 10px;
   margin: 10px;
+
+  @media (--sm) {
+    width: 26%;
+    margin: 10px 2%;
+  }
+
+  @media (--xs) {
+    width: 40%;
+    margin: 10px 0;
+  }
 }
 
 .label {

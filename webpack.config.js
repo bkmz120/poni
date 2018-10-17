@@ -9,7 +9,7 @@ module.exports = function (env = {}, argv) {
     entry: ['babel-polyfill', path.join(__dirname, 'src/index.js')],
     output: {
       path: path.join(__dirname, 'build'),
-      publicPath: '/',
+      publicPath: '',
       filename: 'assets/app.[hash].js'
     },
     module: {

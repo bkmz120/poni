@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  isOpen: true,
+  isOpen: false,
 }
 
 export default function (state = INITIAL_STATE, action) {

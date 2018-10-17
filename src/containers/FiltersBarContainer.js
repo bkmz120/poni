@@ -6,9 +6,11 @@ import {
   getKindsOptions,
   getMinAllowedPrice,
   getMaxAllowedPrice,
-  getValues,
+  getValues
 } from '@reducers/filters'
-import { changeValues, apply } from '@actions/filters'
+
+import { changeValues } from '@actions/filters'
+import { updateVisibleProducts } from '@actions/products'
 
 const mapStateToProps = (state) => {
   return {
@@ -20,12 +22,31 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const { dispatch } = dispatchProps
+
+  const {
+    color,
+    kind,
+    minPrice,
+    maxPrice,
+    isNew
+  } = stateProps.values
+
   return {
+    ...stateProps,
     changeValues: (values) => dispatch(changeValues(values)),
-    apply: () => dispatch(apply()),
+    apply: () => {
+      dispatch(updateVisibleProducts(
+        color,
+        kind,
+        minPrice,
+        maxPrice,
+        isNew,
+      ))
+    }
   }
 }
 
-export default @connect(mapStateToProps, mapDispatchToProps)
+export default @connect(mapStateToProps, null, mergeProps)
 class extends FiltersBar {};

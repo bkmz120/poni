@@ -4,7 +4,3 @@ export const changeValues = (values) => ({
     values,
   }
 })
-
-export const apply = () => ({
-  type: 'APPLY_FILTERS'
-})
