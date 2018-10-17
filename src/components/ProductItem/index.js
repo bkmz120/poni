@@ -10,8 +10,6 @@ export default class ProductItem extends React.PureComponent {
       product
     } = this.props
 
-    console.log('render')
-
     return <div className={style.productItem}>
       <div className={style.label}>
         Имя
@@ -37,12 +35,12 @@ export default class ProductItem extends React.PureComponent {
       <div className={style.value}>
         {product.price}
       </div>
-      <div className={style.label}>
-        Новый
-      </div>
-      <div className={style.value}>
-        {product.is_new}
-      </div>
+
+      { product.is_new &&
+        <div className={style.isNew}>
+          Новинка!
+        </div>
+      }
     </div>
   }
 }

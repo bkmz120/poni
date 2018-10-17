@@ -6,15 +6,15 @@ const INITIAL_STATE = {
   appliedValues: {
     color: '',
     kind: '',
-    minPrice: 0,
-    maxPrice: 0,
+    minPrice: '',
+    maxPrice: '',
     isNew: false,
   },
   values: {
     color: '',
     kind: '',
-    minPrice: 0,
-    maxPrice: 0,
+    minPrice: '',
+    maxPrice: '',
     isNew: false,
   },
 }
@@ -44,6 +44,9 @@ export default function (state = INITIAL_STATE, action) {
           minAllowedPrice = product.price
         }
       })
+
+      minAllowedPrice = Math.floor(minAllowedPrice)
+      maxAllowedPrice = Math.floor(maxAllowedPrice) + 1
 
       colorsList.sort()
       kindsList.sort()
@@ -84,4 +87,9 @@ export const getKindsOptions = (state) => state.filters.kindsList.map(kind => ({
 export const getMinAllowedPrice = (state) => state.filters.minAllowedPrice
 export const getMaxAllowedPrice = (state) => state.filters.maxAllowedPrice
 export const getValues = (state) => state.filters.values
-export const getAppliedValues = (state) => state.filters.appliedValues
+
+export const getFilterColor = (state) => state.filters.appliedValues.color
+export const getFilterKind = (state) => state.filters.appliedValues.kind
+export const getFilterMinPrice = (state) => state.filters.appliedValues.minPrice
+export const getFilterMaxPrice = (state) => state.filters.appliedValues.maxPrice
+export const getFilterIsNew = (state) => state.filters.appliedValues.isNew

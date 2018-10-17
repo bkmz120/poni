@@ -1,5 +1,6 @@
 .filtersBar {
-  padding: 10px 0;
+  padding: 10px 10px;
+  box-shadow: 0 5px 5px 0 rgba(242, 242, 242, 1);
 }
 
 .filters {
@@ -27,3 +28,32 @@
     opacity: 0.9;
   }
 }
+
+.priceLabel {
+  color: #ddd;
+}
+
+.priceValue {
+  border: 1px solid #ccc;
+  padding: 0 5px;
+  margin: 0 10px;
+  line-height: 36px;
+  border-radius: 5px;
+  width: 53px;
+  outline: none;
+
+  &:focus {
+    border-color: #2684ff;
+  }
+}
+
+.checkbox {
+  display: block;
+  margin-top: 10px;
+  color: #444;
+}
+
+.checkboxValue {
+  margin-right: 5px;
+}
+

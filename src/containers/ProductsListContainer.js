@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 
 import ProductsList from '@components/ProductsList'
-import { getFilteredItems } from '@reducers/products'
+import { getFilteredItemsRandLimited } from '@reducers/products'
 
 const mapStateToProps = (state) => {
   return {
-    items: getFilteredItems(state),
+    items: getFilteredItemsRandLimited(state,3),
   }
 }
 

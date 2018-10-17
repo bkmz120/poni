@@ -5,6 +5,7 @@ module.exports = {
     'postcss-mixins': {},
     'postcss-each': {},
     'postcss-conditionals': {},
+    'postcss-inline-svg': {},
     // Включаем линтер
     'stylelint': {},
     // Поcтобработка для совместимости
