@@ -1,0 +1,18 @@
+.productItem {
+  display: inline-block;
+  width: 200px;
+  box-shadow: 0 0 11px 0 #dadada;
+  padding: 10px;
+  margin: 10px;
+}
+
+.label {
+  color: #ccc;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.value {
+  color: #333;
+  margin-bottom: 8px;
+}

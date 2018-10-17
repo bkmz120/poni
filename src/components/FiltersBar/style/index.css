@@ -1,0 +1,29 @@
+.filtersBar {
+  padding: 10px 0;
+}
+
+.filters {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.filter {
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  margin-right: 20px;
+}
+
+.applyBtn {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 38px;
+  color: #fff;
+  padding: 0 20px;
+  background: #162671;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
