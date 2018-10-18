@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem check snapshot 1`] = `
+<div
+  className="productItem"
+>
+  <div
+    className="label"
+  >
+    Имя
+  </div>
+  <div
+    className="value"
+  >
+    Абдула
+  </div>
+  <div
+    className="label"
+  >
+    Цвет
+  </div>
+  <div
+    className="value"
+  >
+    Синий
+  </div>
+  <div
+    className="label"
+  >
+    Вид
+  </div>
+  <div
+    className="value"
+  >
+    Аликорн
+  </div>
+  <div
+    className="label"
+  >
+    Цена
+  </div>
+  <div
+    className="value"
+  >
+    29.99
+  </div>
+  <div
+    className="isNew"
+  >
+    Новинка!
+  </div>
+</div>
+`;

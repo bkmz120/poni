@@ -3,6 +3,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const eslintFriendlyFormatter = require('eslint-friendly-formatter')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = function (env = {}, argv) {
   return {
@@ -99,6 +100,7 @@ module.exports = function (env = {}, argv) {
       }
     },
     plugins: [
+      new CleanWebpackPlugin([path.join(__dirname, 'build')]),
       new MiniCssExtractPlugin({
         filename: 'assets/[name].[hash].css'
       }),

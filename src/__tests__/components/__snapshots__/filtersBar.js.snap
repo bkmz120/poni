@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FiltersBar check init snapshot 1`] = `
+<div
+  className="filtersBar"
+>
+  <div
+    className="filters"
+  >
+    <div
+      className="filter"
+    >
+      <StateManager
+        defaultInputValue=""
+        defaultMenuIsOpen={false}
+        defaultValue={null}
+        isClearable={true}
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "Красный",
+              "value": "Красный",
+            },
+            Object {
+              "label": "Синий",
+              "value": "Синий",
+            },
+            Object {
+              "label": "Фиолетовый",
+              "value": "Фиолетовый",
+            },
+            Object {
+              "label": "Черный",
+              "value": "Черный",
+            },
+          ]
+        }
+        placeholder="Цвет"
+      />
+    </div>
+    <div
+      className="filter"
+    >
+      <StateManager
+        defaultInputValue=""
+        defaultMenuIsOpen={false}
+        defaultValue={null}
+        isClearable={true}
+        onChange={[Function]}
+        options={
+          Array [
+            Object {
+              "label": "Аликорн",
+              "value": "Аликорн",
+            },
+            Object {
+              "label": "Единорог",
+              "value": "Единорог",
+            },
+            Object {
+              "label": "Земная пони",
+              "value": "Земная пони",
+            },
+            Object {
+              "label": "Пегас",
+              "value": "Пегас",
+            },
+          ]
+        }
+        placeholder="Вид"
+      />
+    </div>
+    <div
+      className="filter"
+    >
+      <span
+        className="priceLabel"
+      >
+        Цена от
+      </span>
+      <Tooltip
+        animateFill={true}
+        animation="shift"
+        arrow={true}
+        arrowSize="regular"
+        className=""
+        delay={0}
+        disabled={false}
+        distance={10}
+        duration={375}
+        followCursor={false}
+        hideDelay={0}
+        hideDuration={375}
+        hideOnClick={true}
+        html={null}
+        inertia={false}
+        interactive={false}
+        interactiveBorder={2}
+        multiple={false}
+        offset={0}
+        onHidden={[Function]}
+        onHide={[Function]}
+        onRequestClose={[Function]}
+        onShow={[Function]}
+        onShown={[Function]}
+        open={false}
+        popperOptions={Object {}}
+        position="bottom"
+        size="regular"
+        sticky={false}
+        stickyDuration={200}
+        style={Object {}}
+        theme="dark"
+        title="Минимальное значение должно быть меньше максимального"
+        touchHold={false}
+        trigger="manual"
+        unmountHTMLWhenHide={false}
+      >
+        <input
+          className="priceValue"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </Tooltip>
+      <span
+        className="priceLabel"
+      >
+        до
+      </span>
+      <input
+        className="priceValue"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    className="filter"
+  >
+    <label
+      className="checkbox"
+    >
+      <input
+        checked={false}
+        className="checkboxValue"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      только новинки
+    </label>
+  </div>
+  <div
+    className="applyBtn"
+    onClick={[Function]}
+  >
+    Найти
+  </div>
+</div>
+`;

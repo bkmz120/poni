@@ -1,8 +1,6 @@
 const INITIAL_STATE = {
   colorsList: [],
   kindsList: [],
-  minAllowedPrice: 0,
-  maxAllowedPrice: 0,
   values: {
     color: '',
     kind: '',
@@ -20,8 +18,6 @@ export default function (state = INITIAL_STATE, action) {
       } = action.payload
       const colorsList = []
       const kindsList = []
-      let minAllowedPrice = products[0] ? products[0].price : null
-      let maxAllowedPrice = null
 
       products.forEach(product => {
         if (!colorsList.includes(product.color)) {
@@ -30,16 +26,7 @@ export default function (state = INITIAL_STATE, action) {
         if (!kindsList.includes(product.kind)) {
           kindsList.push(product.kind)
         }
-        if (product.price > maxAllowedPrice) {
-          maxAllowedPrice = product.price
-        }
-        if (product.price < minAllowedPrice) {
-          minAllowedPrice = product.price
-        }
       })
-
-      minAllowedPrice = Math.floor(minAllowedPrice)
-      maxAllowedPrice = Math.floor(maxAllowedPrice) + 1
 
       colorsList.sort()
       kindsList.sort()
@@ -48,8 +35,6 @@ export default function (state = INITIAL_STATE, action) {
         ...state,
         colorsList,
         kindsList,
-        minAllowedPrice,
-        maxAllowedPrice,
       }
     case 'CHANGE_FILTERS_VALUES':
       const { values } = action.payload
@@ -70,6 +55,4 @@ export const getKindsOptions = (state) => state.filters.kindsList.map(kind => ({
   label: kind,
   value: kind,
 }))
-export const getMinAllowedPrice = (state) => state.filters.minAllowedPrice
-export const getMaxAllowedPrice = (state) => state.filters.maxAllowedPrice
 export const getValues = (state) => state.filters.values

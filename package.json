@@ -13,9 +13,10 @@
   "jest": {
     "rootDir": "./src",
     "moduleNameMapper": {
-      "@constants(.*)$": "<rootDir>/constants/$1",
+      "@actions(.*)$": "<rootDir>/actions/$1",
       "@components(.*)$": "<rootDir>/components/$1",
-      "@utils(.*)$": "<rootDir>/utils/$1",
+      "@reducers(.*)$": "<rootDir>/reducers/$1",
+      "@shapes(.*)$": "<rootDir>/shapes/$1",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
     },
     "transform": {
@@ -25,7 +26,10 @@
     "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
     "snapshotSerializers": [
       "<rootDir>/../node_modules/enzyme-to-json/serializer"
-    ]
+    ],
+    "globals": {
+      "window": true
+    }
   },
   "author": "",
   "license": "ISC",
@@ -53,6 +57,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.0",
     "enzyme": "^3.6.0",

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList check snapshot 1`] = `
+<div
+  className="productsList"
+>
+  <ProductItem
+    key="Твайлайт"
+    product={
+      Object {
+        "color": "Фиолетовый",
+        "is_new": false,
+        "kind": "Единорог",
+        "name": "Твайлайт",
+        "price": 19.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Абдула"
+    product={
+      Object {
+        "color": "Синий",
+        "is_new": true,
+        "kind": "Аликорн",
+        "name": "Абдула",
+        "price": 29.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Иосиф"
+    product={
+      Object {
+        "color": "Красный",
+        "is_new": false,
+        "kind": "Пегас",
+        "name": "Иосиф",
+        "price": 9.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Саня"
+    product={
+      Object {
+        "color": "Черный",
+        "is_new": false,
+        "kind": "Единорог",
+        "name": "Саня",
+        "price": 19.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Ли Кук"
+    product={
+      Object {
+        "color": "Фиолетовый",
+        "is_new": true,
+        "kind": "Единорог",
+        "name": "Ли Кук",
+        "price": 29.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Портман"
+    product={
+      Object {
+        "color": "Синий",
+        "is_new": false,
+        "kind": "Земная пони",
+        "name": "Портман",
+        "price": 19.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Тиша"
+    product={
+      Object {
+        "color": "Фиолетовый",
+        "is_new": false,
+        "kind": "Пегас",
+        "name": "Тиша",
+        "price": 9.99,
+      }
+    }
+  />
+  <ProductItem
+    key="Черный лукич"
+    product={
+      Object {
+        "color": "Черный",
+        "is_new": false,
+        "kind": "Земная пони",
+        "name": "Черный лукич",
+        "price": 9.99,
+      }
+    }
+  />
+</div>
+`;

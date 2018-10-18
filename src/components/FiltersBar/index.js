@@ -207,8 +207,6 @@ export default class FiltersBar extends React.Component {
 FiltersBar.propTypes = {
   colorsOptions: PropTypes.array.isRequired,
   kindsOptions: PropTypes.array.isRequired,
-  minAllowedPrice: PropTypes.number.isRequired,
-  maxAllowedPrice: PropTypes.number.isRequired,
   values: PropTypes.shape({
     color: PropTypes.string,
     kind: PropTypes.string,
