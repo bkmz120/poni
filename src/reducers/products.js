@@ -1,3 +1,5 @@
+import memoizee from 'memoizee'
+
 const INITIAL_STATE = {
   allItems: [],
   visibleItems: [],
@@ -8,7 +10,7 @@ const VISIBLE_PRODUCTS_LIMIT = 20;
 const randLimit = (items, limit) => {
   const result = []
   const indexes = {}
-  for (let i = 0; i < items.length && i<limit; i++) {
+  for (let i = 0; i < items.length && i < limit; i++) {
     let j
     do {
       j = Math.floor(Math.random() * (items.length))
@@ -18,6 +20,30 @@ const randLimit = (items, limit) => {
   }
   return result
 }
+
+const applyFilter = (
+  items,
+  filterColor,
+  filterKind,
+  filterMinPrice,
+  filterMaxPrice,
+  filterIsNew,
+) => {
+  return items.filter((item) => {
+    const checkColor = filterColor === '' || item.color === filterColor
+    const checkKind = filterKind === '' || item.kind === filterKind
+    const checkMinPrice = filterMinPrice === '' || item.price >= parseFloat(filterMinPrice)
+    const checkMaxPrice = filterMaxPrice === '' || item.price <= parseFloat(filterMaxPrice)
+    const chekIsNew = !filterIsNew || (filterIsNew && item.is_new)
+    return checkColor &&
+           checkKind &&
+           checkMinPrice &&
+           checkMaxPrice &&
+           chekIsNew
+  })
+}
+
+const memoizedApplyFilter = memoizee(applyFilter, { max: 50 })
 
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -38,18 +64,14 @@ export default function (state = INITIAL_STATE, action) {
         filterIsNew
       } = action.payload
 
-      const filteredItems = state.allItems.filter((item) => {
-        const checkColor = filterColor === '' || item.color === filterColor
-        const checkKind = filterKind === '' || item.kind === filterKind
-        const checkMinPrice = filterMinPrice === '' || item.price >= parseFloat(filterMinPrice)
-        const checkMaxPrice = filterMaxPrice === '' || item.price <= parseFloat(filterMaxPrice)
-        const chekIsNew = !filterIsNew || (filterIsNew && item.is_new)
-        return checkColor &&
-               checkKind &&
-               checkMinPrice &&
-               checkMaxPrice &&
-               chekIsNew
-      })
+      const filteredItems = memoizedApplyFilter(
+        state.allItems,
+        filterColor,
+        filterKind,
+        filterMinPrice,
+        filterMaxPrice,
+        filterIsNew
+      )
 
       return {
         ...state,
